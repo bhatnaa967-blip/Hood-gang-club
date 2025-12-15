@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <title>Hood gang Club | Бидний тухай</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Баннер overlay */
+    .banner {
+      background: url('images/banner_about.jpg') center/cover no-repeat;
+      height: 400px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    .banner-overlay {
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .section-preview {
+      padding: 60px 0;
+    }
+    .bg-light-gray {
+      background-color: #f7f7f7;
+    }
+    .section-preview ul {
+      text-align: left;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .section-preview img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== MENU ===== -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container justify-content-center">
+    <a class="navbar-brand" href="index.html">Hood gang Club</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainMenu">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Нүүр</a></li>
+        <li class="nav-item"><a class="nav-link active" href="about.html">Бидний тухай</a></li>
+        <li class="nav-item"><a class="nav-link" href="programs.html">Хөтөлбөрүүд</a></li>
+        <li class="nav-item"><a class="nav-link" href="trainers.html">Дасгалжуулагчид</a></li>
+        <li class="nav-item"><a class="nav-link" href="schedule.html">Хуваарь</a></li>
+        <li class="nav-item"><a class="nav-link" href="membership.html">Гишүүнчлэл</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Зургийн цомог</a></li>
+        <li class="nav-item"><a class="nav-link" href="video.html">Видео</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Холбоо барих</a></li>
+        <li class="nav-item" id="loginMenu"><a class="nav-link" href="login.html">Нэвтрэх</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== BANNNER ===== -->
+<section class="banner">
+  <div class="banner-overlay">
+    <h1>Бидний тухай</h1>
+    <p>Эрүүл амьдрал, хүч чадал нэмэгдүүлэх таны хамтрагч</p>
+  </div>
+</section>
+
+<!-- ===== CLUB HISTORY ===== -->
+<section class="section-preview text-center">
+  <div class="container">
+    <h2>Манай клубын түүх</h2>
+    <p>Hood gang Club нь 2025 онд байгуулагдсан бөгөөд бүх насны хүмүүст зориулсан фитнес, эрүүл мэндийн үйлчилгээг үзүүлдэг. Бидний зорилго нь хүмүүст эрүүл, идэвхтэй амьдралыг дэмжих явдал юм.</p>
+    <p>Манай дасгалжуулагчид мэргэжлийн баг бөгөөд таны зорилгод тохирсон хөтөлбөрийг санал болгодог.</p>
+  </div>
+</section>
+
+<!-- ===== GOALS & FEATURES ===== -->
+<section class="section-preview bg-light-gray text-center">
+  <div class="container">
+    <h2>Манай зорилго</h2>
+    <ul class="list-unstyled mt-3">
+      <li>1. Эрүүл амьдралд дэмжлэг үзүүлэх</li>
+      <li>2. Насанд тохирсон дасгалын хөтөлбөр</li>
+      <li>3. Мэргэжлийн дасгалжуулагчид</li>
+      <li>4. Орчин үеийн тоног төхөөрөмж</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-dark text-white text-center py-4">
+  <p>&copy; 2025@hood gang</p>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Demo Login/Logout логик
+  let isLoggedIn = false;
+
+  function loginCheck() {
+    const emailInput = document.getElementById('email')?.value;
+    const passwordInput = document.getElementById('password')?.value;
+    if(emailInput && passwordInput){
+      isLoggedIn = true;
+      alert('Амжилттай нэвтэрлээ: ' + emailInput);
+      const loginMenu = document.getElementById('loginMenu');
+      if(loginMenu) loginMenu.innerHTML = '<a class="nav-link" href="#" onclick="logout()">Logout</a>';
+      return false;
+    } else {
+      alert('Имэйл болон нууц үгээ оруулна уу!');
+      return false;
+    }
+  }
+
+  function logout(){
+    isLoggedIn = false;
+    alert('Амжилттай гарлаа');
+    const loginMenu = document.getElementById('loginMenu');
+    if(loginMenu) loginMenu.innerHTML = '<a class="nav-link" href="login.html">Нэвтрэх</a>';
+  }
+</script>
+
+</body>
+</html>
